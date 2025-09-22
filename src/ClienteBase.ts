@@ -1,6 +1,8 @@
+import { Pedido } from "./Pedido";
 export abstract class ClienteBase {
     private readonly _id: number;
     private _email!: string;
+    private _pedidos: Pedido[] = [];
 
     constructor(id: number, email: string) {
         this._id = id;
@@ -29,10 +31,19 @@ export abstract class ClienteBase {
         }
     }
 
+    public adicionarPedido(pedido: Pedido) {
+        this._pedidos.push(pedido);
+    }
+
+    public calcularTotalGasto() {
+        return this._pedidos.reduce((total, pedido) => total + pedido.total, 0);
+    }
+
     public toJSON() {
         return {
             id: this.id,
-            email: this.email
+            email: this.email,
+            pedidos: this._pedidos.map(p => p.toJSON())
         }
     }
 }
