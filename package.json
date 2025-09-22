@@ -1,0 +1,17 @@
+{
+  "name": "projeto-final---minha-loja",
+  "version": "1.0.0",
+  "description": "Projeto final do Modulo 2 - Programação Orientada a Objetos",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "Jeronimo Lucas",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
